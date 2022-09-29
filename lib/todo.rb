@@ -1,17 +1,18 @@
 class Todo
 	def initialize(task) # task is a string
-		# holds instance variables
+		@task = {"task" => task, "status" => false}
 	end
 
 	def task
-		# return task as a string
+		return @task["task"]
 	end
 
 	def is_done?
-		# return false if incomplete, true if completed
+		return @task["status"]
 	end
 
 	def mark_done!
+		@task["status"] = true
 		# change status from false to true
 	end
 end

@@ -1,17 +1,17 @@
 class TodoList
 	def initialize
-		# holds instance variables
+		@list = []
 	end
 
 	def add(todo)
-		# add todo to the list
+		@list.push(todo)
 	end
 
 	def complete
-		# return completed todos
+		@list.select{|todo| todo.is_done? == true}
 	end
 
 	def incomplete
-		# returns incomplete todos
+		@list.select{|todo| todo.is_done? == false}
 	end
 end

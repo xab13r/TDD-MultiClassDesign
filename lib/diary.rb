@@ -6,6 +6,7 @@ class Diary
 
 	def add(entry)
 		@entries.push(entry)
+		find_number(entry.contents)
 	end
 
 	def all
@@ -30,6 +31,12 @@ class Diary
 	private
 
 	def find_number(contents)
-		# finds number in contents and add to the phonebook class
+		words = contents.split(" ")
+		words = words.select{|string| string.length == 11}
+		words = words.select{|string| string.start_with?("07")}
+		words = words.select{|string| string.match(/[^0-9]/) == nil}
+    if words[0] != nil
+ 		 @phone_numbers.push(words[0])
+	 end
 	end
 end
