@@ -1,7 +1,5 @@
 # Tests
 
-Program name: Filofax
-
 ## Integration Tests - Diary
 
 ```ruby

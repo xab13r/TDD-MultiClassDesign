@@ -46,14 +46,6 @@ TodoList
 		Create todos
 		Return status of todos
 		Change the status
-
-Phonebook
-	List contacts
-	Add contacts
-
-	Contact
-		Create contact
-		Return information
 ```
 
 ```ruby

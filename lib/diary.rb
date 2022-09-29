@@ -1,25 +1,30 @@
 class Diary
 	def initialize
-		# holds list of entries as objects
-		# holds list of numbers
+		@entries = []
+		@phone_numbers = []
 	end
 
 	def add(entry)
-		# adds entries to the list
-		# returns nothing
+		@entries.push(entry)
 	end
 
 	def all
-		# returns list of all the entries as objects
+		return @entries
 	end
 
 	def select_entry(wpm, minutes_available)
 		# wpm is a number, minutes_available is number
 		# returns the entry whose reading time is the closest but under the time available
+		readable_length = wpm * minutes_available
+		readable_entries = @entries.select  { |entry| entry.words_count <= readable_length }
+		readable_array = readable_entries.map { |entry| [entry.contents, entry.words_count]}
+		readable_hash = readable_array.to_h
+		return readable_hash.key(readable_hash.values.max)
+		# select_entry = readable.select {|entry| entry.word_count.}
 	end
 
 	def phone_list
-		# returns list of phone numbers
+		return @phone_numbers
 	end
 
 	private

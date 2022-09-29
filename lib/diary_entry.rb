@@ -1,17 +1,18 @@
 class DiaryEntry
 	def initialize(title, contents)
-		# holds instance variables
+		@title = title
+		@contents = contents.split(" ")
 	end
 
 	def title
-		# returns entry title
+		return @title
 	end
 
 	def contents
-		# returns entry contents
+		return @contents.join(" ")
 	end
 
 	def words_count
-		# returns words count for the contents
+		return @contents.length
 	end
 end
