@@ -9,7 +9,8 @@ Program name: Filofax
 diary = Diary.new
 entry = DiaryEntry.new("my title", "my content")
 diary.add(entry)
-diary.all => [entry]
+diary.all # => [entry]
+diary.phone_list # => []
 ```
 
 ```ruby

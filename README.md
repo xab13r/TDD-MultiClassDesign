@@ -5,15 +5,19 @@ User Stories
 > As a user
 > So that I can record my experiences
 > I want to keep a regular diary
+
 > As a user
 > So that I can reflect on my experiences
 > I want to read my past diary entries
+
 > As a user
 > So that I can reflect on my experiences in my busy day
 > I want to select diary entries to read based on how much time I have and my reading speed
+
 > As a user
 > So that I can keep track of my tasks
 > I want to keep a todo list along with my diary
+
 > As a user
 > So that I can keep track of my contacts
 > I want to see a list of all of the mobile phone numbers in all my diary entries
@@ -42,13 +46,21 @@ TodoList
 		Create todos
 		Return status of todos
 		Change the status
+
+Phonebook
+	List contacts
+	Add contacts
+
+	Contact
+		Create contact
+		Return information
 ```
 
 ```ruby
 class Diary
 	def initialize
 		# holds list of entries as objects
-		# holds list of phone numbers
+		# holds list of numbers
 	end
 
 	def add(entry)
@@ -65,16 +77,18 @@ class Diary
 		# returns the entry whose reading time is the closest but under the time available
 	end
 
-	def check_for_phone_number(entry)
-		# scan contents for phone numbers
-		# add phone numbers to the list
+	def phone_list
+		# returns list of phone numbers
 	end
 
-	def phone_list
-		# returns the list of phone numbers
+	private
+
+	def find_number(contents)
+		# finds number in contents and add to the phonebook class
 	end
 end
 ```
+
 ```ruby
 class DiaryEntry
 	def initialize(title, contents)
@@ -97,7 +111,7 @@ end
 ```ruby
 class TodoList
 	def initialize
-		# set up instance variables
+		# holds instance variables
 	end
 
 	def add(todo)
@@ -116,7 +130,7 @@ end
 ```ruby
 class Todo
 	def initialize(task) # task is a string
-		# set up instance variables
+		# holds instance variables
 	end
 
 	def task
@@ -124,7 +138,7 @@ class Todo
 	end
 
 	def is_done?
-		# return false if incomplete, true otherwise
+		# return false if incomplete, true if completed
 	end
 
 	def mark_done!
